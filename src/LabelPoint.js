@@ -32,7 +32,7 @@
                 var r = ((x_max - x_min) * (y_max - y_min));
                 var dx, dy;
                 while (r > precision) {
-                    lp = this.pollScan(x_min, y_min, x_max, y_max, points);
+                    lp = this.poleScan(x_min, y_min, x_max, y_max, points);
                     dx = (x_max - x_min) / 24;
                     dy = (y_max - y_min) / 24;
                     x_min = lp.x - dx;
