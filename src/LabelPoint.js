@@ -2,7 +2,7 @@
  * LabelPoint.js
  *
  * Class to find the optimum placement for a label inside an irregular polygon using
- * Polls of Inaccessibility algorithm.
+ * Poles of Inaccessibility algorithm.
  *
  * George Gardiner
  * www.commonmode.co.uk
@@ -27,7 +27,7 @@
                     y_max = Math.max(y_max, points[i].y);
                 }
             }
-            var lp = this.pollScan(x_min, y_min, x_max, y_max, points);
+            var lp = this.poleScan(x_min, y_min, x_max, y_max, points);
             if (precision > 0) {
                 var r = ((x_max - x_min) * (y_max - y_min));
                 var dx, dy;
@@ -101,7 +101,7 @@
                 && (c = !c);
             return c;
         },
-        pollScan: function (x_min, y_min, x_max, y_max, points) {
+        poleScan: function (x_min, y_min, x_max, y_max, points) {
             var px, py, pd, maxDistance = 0;
             for (var y = y_min; y < y_max; y += ((y_max - y_min) / 24)) {
                 for (var x = x_min; x < x_max; x += ((x_max - x_min) / 24)) {
